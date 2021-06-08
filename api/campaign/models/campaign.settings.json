@@ -1,0 +1,58 @@
+{
+  "kind": "collectionType",
+  "collectionName": "campaigns",
+  "info": {
+    "name": "Campaign",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "channel": {
+      "type": "enumeration",
+      "enum": [
+        "Email",
+        "SMS"
+      ]
+    },
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "assets": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "details": {
+      "type": "dynamiczone",
+      "components": [
+        "email.email",
+        "sms.sms"
+      ]
+    },
+    "client": {
+      "model": "client",
+      "via": "campaigns"
+    },
+    "deploymentDate": {
+      "type": "datetime"
+    },
+    "targetPopulation": {
+      "type": "integer"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_sms_sms",
+  "info": {
+    "name": "SMS",
+    "icon": "mobile-alt"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "copy": {
+      "type": "text"
+    }
+  }
+}
